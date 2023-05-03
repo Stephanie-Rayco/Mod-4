@@ -28,18 +28,18 @@ def savings(gross_pay, tax_rate, expenses):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    def savings(gross_pay, tax_rate, expenses):
     
-        take_home_pay=(int((gross_pay*100) - (gross_pay*tax_rate)) - expenses*100)
-        return take_home_pay
-
     gross_pay=int(input("Gross Pay:"))
     tax_rate=float(input("Tax Rate (a number between 0 and 1):"))
     expenses=int(input("Expenses:"))
+
+    def savings(gross_pay, tax_rate, expenses):
+        take_home_pay=(int((gross_pay*100) - (gross_pay*tax_rate)) - expenses*100)
+        return take_home_pay
+
+        print("The employee has", savings(gross_pay, tax_rate, expenses), "centavos remaining from his/her gross pay after taxes and expenses")
+
     
-    print("The employee has ", savings(gross_pay, tax_rate, expenses), "centavos remaining from his/her gross pay after taxes and expenses")
-
-
 def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''Material Waste.
     2 points.
@@ -68,20 +68,20 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    def material_waste(total_material, material_units, num_jobs, job_consumption):
+    total_material = int(input("Total materials available: "))
+    material_units = str(input("Material unit available: "))
+    num_jobs = int(input("Number of jobs to run: "))
+    job_consumption = int(input("Amount of materials consumed per job here:"))
     
+    def material_waste(total_material, material_units, num_jobs, job_consumption):
         materials_used = (num_jobs*job_consumption)
         materials_available = (total_material - materials_used)
     
         return materials_available
-    
-    total_material = int(input("Total materials available:"))
-    material_units = str(input("Material unit available :"))
-    num_jobs = int(input("Number of jobs to run:"))
-    job_consumption = int(input("Amount of materials consumed per job here:"))
 
-    print("The amount of remaining material is ",material_waste(total_material, material_units, num_jobs, job_consumption),material_units,sep='')print("The amount of remaining material is ",material_waste(total_material, material_units, num_jobs, job_consumption),material_units,sep='')
- 
+    print("The amount of remaining material is ",material_waste(total_material, material_units, num_jobs, job_consumption),material_units,sep='')
+
+
 
 def interest(principal, rate, periods):
     '''Interest.
@@ -106,16 +106,15 @@ def interest(principal, rate, periods):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    def interest(principal, rate, periods):
+    principal = int(input("Amount invested in Pesos: "))
+    rate = float(input("Interest rate per period, expressed as a decimal representation of a percentage: "))
+    periods = int(input("Number of periods invested in Pesos: "))
     
+    def interest(principal, rate, periods):
         sim_interest = (principal*100*rate*periods)
         new_principle = (sim_interest+principal)
     
         return new_principle
-
-    principal = int(input("Amount invested in Pesos:"))
-    rate = float(input("Interest rate per period, expressed as a decimal representation of a percentage:"))
-    periods = int(input("Number of periods invested in Pesos:"))
 
     print("The final value of the investment is ", int(interest(principal, rate, periods)),"centavos", sep='')
 
@@ -146,22 +145,22 @@ def body_mass_index(weight, height):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer
+    your_weight = float(input("Weight in pounds: "))
+    your_height = input("Height: ")
+    digits_only = ""
+
     def body_mass_index(weight, height):
-    
         weight_kg = weight / 2.205
         height_m = (float(height[0]) * 0.3048) + float(float(height[1:]) * 0.0254)
         bmi = weight_kg / (height_m ** 2)
     
         return bmi
 
-    your_weight = float(input("Weight in pounds:"))
-    your_height = input("Height:")
-    digits_only = ""
-
     for i in your_height:
         if i.isdigit():
-            digits_only += i
+        digits_only += i
 
     height=(digits_only)
 
     print("Your BMI is", body_mass_index(your_weight, your_height))
+
