@@ -29,15 +29,15 @@ def savings(gross_pay, tax_rate, expenses):
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     
-    gross_pay=int(input("Gross Pay:"))
-    tax_rate=float(input("Tax Rate (a number between 0 and 1):"))
-    expenses=int(input("Expenses:"))
+    gross_pay = int(input("Gross Pay:"))
+    tax_rate = float(input("Tax Rate (a number between 0 and 1):"))
+    expenses = int(input("Expenses:"))
 
     def savings(gross_pay, tax_rate, expenses):
-        take_home_pay=(int((gross_pay*100) - (gross_pay*tax_rate)) - expenses*100)
+        take_home_pay = (int((gross_pay * 100) - (gross_pay * tax_rate)) - expenses * 100)
         return take_home_pay
-
-        print("The employee has", savings(gross_pay, tax_rate, expenses), "centavos remaining from his/her gross pay after taxes and expenses")
+    
+    print("The employee has", savings(gross_pay, tax_rate, expenses), "centavos remaining from his/her gross pay after taxes and expenses")
 
     
 def material_waste(total_material, material_units, num_jobs, job_consumption):
@@ -74,7 +74,7 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
     job_consumption = int(input("Amount of materials consumed per job here:"))
     
     def material_waste(total_material, material_units, num_jobs, job_consumption):
-        materials_used = (num_jobs*job_consumption)
+        materials_used = (num_jobs * job_consumption)
         materials_available = (total_material - materials_used)
     
         return materials_available
@@ -111,12 +111,12 @@ def interest(principal, rate, periods):
     periods = int(input("Number of periods invested in Pesos: "))
     
     def interest(principal, rate, periods):
-        sim_interest = (principal*100*rate*periods)
-        new_principle = (sim_interest+principal)
+        sim_interest = (principal * 100 * rate * periods)
+        new_principle = (sim_interest + principal)
     
         return new_principle
 
-    print("The final value of the investment is ", int(interest(principal, rate, periods)),"centavos", sep='')
+    print("The final value of the investment is ", int(interest(principal, rate, periods)),"centavos", sep ='')
 
 
 def body_mass_index(weight, height):
