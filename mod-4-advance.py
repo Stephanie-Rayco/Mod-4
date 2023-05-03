@@ -1,5 +1,7 @@
 '''Module 4: Individual Programming Assignment 1
+
 Parsing Data
+
 This assignment covers your ability to manipulate data in Python.
 '''
 
